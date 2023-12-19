@@ -180,57 +180,27 @@ function captureConsoleOutput() {
   
 
   //HTML Validation 
+//var htmlString = document.getElementById('html-code').value;
+  function validateHTML(){
 
-  function validateHTML() {
-    // Get the HTML code from the textarea
-    var htmlCode = document.getElementById('html-code').value;
-    //console.log("Html Code Type:"+typeof htmlCode);
-    // Create a new DOMParser
-    var parser = new DOMParser();
-    //console.log("html Code:"+ htmlCode);
-    // Parse the HTML code
-    var doc = parser.parseFromString(htmlCode, 'text/html');
-    //console.log("validate Html"+doc)
-   // console.log("Document: "+doc.parseErrors);
-    // Check for parsing errors
-    if (!doc.body || doc.body.childElementCount === 0) {
-        console.error('HTML Syntax Error: Invalid HTML');
+    var popup = document.getElementById('popup');
+    popup.style.display = 'block';
+
+    let htmlString = document.getElementById('html-code').value;
+    let parser = new DOMParser();
+    let doc = parser.parseFromString(htmlString, "application/xml");
+    let errorNode = doc.querySelector('parsererror');
+    document.getElementById('popup').innerHTML = '';
+    //var eString = JSON.stringify(errorNode);
+    if (errorNode) {
+        //alert("Encountered Error: "+errorNode);
+        document.getElementById('popup').innerHTML += errorNode.outerHTML;
     } else {
-        console.log('HTML is valid!');
+        document.getElementById('popup').innerText = 'Valid HTML!';
     }
 }
 
-// Attach the validation function to an event, for example, when a button is clicked
-document.getElementById('validate-button').addEventListener('click', validateHTML);
-
-
-//sample html code type
-function validateHTML(htmlString) {
-    var parser = new DOMParser();
-    var doc;
-
-    try {
-        doc = parser.parseFromString(htmlString, 'text/html');
-        var errors = doc.parseErrors;
-
-        if (errors && errors.length > 0) {
-            console.error('HTML Syntax Error(s):');
-
-            errors.forEach(function (error) {
-                console.error(`Code: ${error.code}, Message: ${error.message}, Line: ${error.lineNumber}`);
-            });
-
-            return false; // Invalid HTML
-        }
-    } catch (e) {
-        console.error('Error during parsing:', e.message);
-        return false; // Invalid HTML
-    }
-
-    console.log('HTML is valid!');
-    return true; // Valid HTML
+function closePopup() {
+    var popup = document.getElementById('popup');
+    popup.style.display = 'none';
 }
-
-// Example usage:
-var htmlString = document.getElementById('html-code').value;
-validateHTML(htmlString);
