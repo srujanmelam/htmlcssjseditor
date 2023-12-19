@@ -78,3 +78,35 @@ iframe{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 999;
 }
+
+
+/* .editor-container {
+    position: relative;
+    display: flex;
+}
+
+.line-numbers {
+    counter-reset: line;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    border-right: 1px solid #ccc;
+    background-color: #f4f4f4;
+    font-family: monospace;
+}
+
+#line-numbers div::before {
+    content: counter(line);
+    counter-increment: line;
+    display: block;
+    color: #888;
+}
+
+textarea {
+    font-family: monospace;
+    resize: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+} */

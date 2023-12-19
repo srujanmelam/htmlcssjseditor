@@ -15,8 +15,13 @@
         <div class="editor">
             <div class="left">
                 <label for=""><i class='bx bxl-html5'></i>HTML</label>
-                <textarea name="" onkeyup="run()" spellcheck="false" id="html-code"></textarea>
+                <textarea name="" onkeyup="run()" spellcheck="false" id="html-code" oninput="updateLineNumbers()"></textarea>
+                <!-- <div class="editor-container">
+                    <div class="line-numbers" id="line-numbers"></div>
+                <textarea name="" onkeyup="run()" spellcheck="false" id="html-code" oninput="updateLineNumbers()"></textarea>
 
+                </div>
+                 -->
                 <label for=""><i class='bx bxl-css3' ></i>CSS</label>
                 <textarea name="" onkeyup="run()" spellcheck="false" id="css-code"></textarea>
 

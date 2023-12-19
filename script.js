@@ -204,3 +204,19 @@ function closePopup() {
     var popup = document.getElementById('popup');
     popup.style.display = 'none';
 }
+
+
+
+// function updateLineNumbers() {
+//     var textarea = document.getElementById('html-code');
+//     var lineNumbers = document.getElementById('line-numbers');
+    
+//     var lines = textarea.value.split('\n');
+//     var lineNumbersContent = '';
+    
+//     for (var i = 1; i <= lines.length; i++) {
+//         lineNumbersContent += '<div></div>';
+//     }
+
+//     lineNumbers.innerHTML = lineNumbersContent;
+// }
