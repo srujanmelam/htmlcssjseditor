@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <section class="container">
+        <h1>Code Editor</h1>
+       
+        <div class="editor">
+            <div class="left">
+                <label for=""><i class='bx bxl-html5'></i>HTML</label>
+                <textarea name="" onkeyup="run()" spellcheck="false" id="html-code"></textarea>
+
+                <label for=""><i class='bx bxl-css3' ></i>CSS</label>
+                <textarea name="" onkeyup="run()" spellcheck="false" id="css-code"></textarea>
+
+                <label for=""><i class='bx bxl-javascript'></i>JavaScript</label>
+                <textarea name="" onkeyup="run()" spellcheck="false" id="js-code"></textarea>
+                <label for=""><i class='bx bxl-javascript'></i>Console</label>
+                <!-- <textarea name="" onkeyup="run()" spellcheck="false" id="js-code"></textarea> -->
+                <div id="console"></div>
+            </div>
+            <div id="outputClick" class="right">
+                <label for=""><i class='bx bx-play' ></i>Output</label>
+                <iframe id="output"></iframe>
+            </div>
+        </div>
+        <div id="buttons">
+            <button id="save-button">Save Changes</button>
+            <button id="load-button" onclick="toggleDropdown()">Load Changes</button>
+            <button id="validate-button">Check</button>
+            <div id="dropdown-content" style="display: none;">
+              <a href="#" param="html"  onclick="openFile(this.getAttribute('param'))">HTML</a>
+              <a href="#" param="css"  onclick="openFile(this.getAttribute('param'))">CSS</a>
+              <a href="#" param="js"  onclick="openFile(this.getAttribute('param'))">JavaScript</a>
+            </div>
+
+        </div>
+
+    </section>
+    
+  <script src="script.js"></script>  
+</body>
+</html>
