@@ -9,7 +9,7 @@
 }
 
 
-#save-button{
+#save-button, #load-button{
     text-decoration: none;
     background-color: #1f1f1f;
     border-color: seagreen;
